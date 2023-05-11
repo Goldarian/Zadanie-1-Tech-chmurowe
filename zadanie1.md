@@ -6,20 +6,6 @@ Aby zainstalować projekt należy:
 4. Otworzyć folder z projektem.
 5. W terminalu wpisać npm init, aby pobrały się niezbędne zależności.
 
-**3.**
-Należy podać polecenia niezbędne do:
-a. zbudowania opracowanego obrazu kontenera:
-docker build -t zadanie1 .
-b. uruchomienia kontenera na podstawie zbudowanego obrazu:
-docker run -p 3000:3000 --name zad1 zadanie1
-c. sposobu uzyskania informacji, które wygenerował serwer w trakcie uruchamiana kontenera
-(patrz: punkt 1a):
-Informacja pojawia się od razu po wystartowaniu serwera.
-d. sprawdzenia, ile warstw posiada zbudowany obraz.
-docker history zadanie1
-
-W repozytorium znajduje się plik Przeglądarka.pmg, w którym znajduje się wynik działania.
-
 **1. Program serwera**
 
 const express = require('express'); //import bibliorek
@@ -64,3 +50,19 @@ HEALTHCHECK --interval=30s --timeout=10s \
     CMD curl -f http://localhost:3000 || exit 1
 
 CMD [ "npm", "start" ]
+
+**3.**
+Należy podać polecenia niezbędne do:
+a. zbudowania opracowanego obrazu kontenera:
+docker build -t zadanie1 .
+b. uruchomienia kontenera na podstawie zbudowanego obrazu:
+docker run -p 3000:3000 --name zad1 zadanie1
+c. sposobu uzyskania informacji, które wygenerował serwer w trakcie uruchamiana kontenera
+(patrz: punkt 1a):
+Informacja pojawia się od razu po wystartowaniu serwera.
+d. sprawdzenia, ile warstw posiada zbudowany obraz.
+docker history zadanie1
+
+W repozytorium znajduje się plik Przeglądarka.pmg, w którym znajduje się wynik działania.
+
+
