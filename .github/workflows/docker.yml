@@ -17,10 +17,10 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Build Docker image
-      run: docker build -t nazwa_obrazu:tag .
+      run: docker build -t lab12:latest .
 
     - name: Login to Docker Hub
       run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
 
     - name: Push Docker image
-      run: docker push nazwa_obrazu:tag
+      run: docker push lab12:latest
